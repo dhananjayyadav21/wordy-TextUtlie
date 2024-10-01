@@ -36,12 +36,12 @@ export default function Navbar(props) {
               </li>
             </ul>
 
-            <button type="button" className="btn btn-primary mx-1" onClick={props.BlueMode}>Blue</button>
-            <button type="button" className="btn btn-warning mx-1" onClick={props.yelloMode}>Yllow</button>
-            <button type="button" className="btn btn-success mx-1" onClick={props.greenMode}>green</button>
+            <button type="button" className="btn btn-primary mx-1 my-1" onClick={props.BlueMode}>Blue</button>
+            <button type="button" className="btn btn-warning mx-1 my-1" onClick={props.yelloMode}>Yllow</button>
+            <button type="button" className="btn btn-success mx-1 my-1" onClick={props.greenMode}>green</button>
             
 
-            <div className="form-check form-switch mx-4">
+            <div className="form-check form-switch mx-1  mx-md-4 my-3">
               <input
                 className="form-check-input"
                 type="checkbox"
@@ -51,7 +51,7 @@ export default function Navbar(props) {
               />
             </div>
 
-            <form className="d-flex" role="search">
+            <form className="d-flex mb-3 mb-sm-0" role="search">
               <input
                 className="form-control me-2"
                 type="search"

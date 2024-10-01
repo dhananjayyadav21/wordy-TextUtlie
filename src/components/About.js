@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function About() {
+export default function About(props) {
   const [mystyle, setMystyle] = useState({
     color: " black",
     backgroundColor: "white",
@@ -26,9 +26,9 @@ export default function About() {
 
   return (
     <div>
-      <div className="container" style={mystyle}>
+      <div className="container" style={props.mystyle}>
         <h2 className="my-3">About Us</h2>
-        <div className="accordion" id="accordionExample" style={mystyle}>
+        <div className="accordion" id="accordionExample" style={props.mystyle}>
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
@@ -36,7 +36,7 @@ export default function About() {
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
-                style={mystyle}
+                style={props.mystyle}
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
@@ -48,7 +48,7 @@ export default function About() {
               className="accordion-collapse collapse show"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body" style={mystyle}>
+              <div className="accordion-body" style={props.mystyle}>
                 <strong>This is the first item's accordion body.</strong> It is
                 shown by default, until the collapse plugin adds the appropriate
                 classNamees that we use to style each element. These classNamees
@@ -68,7 +68,7 @@ export default function About() {
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo"
-                style={mystyle}
+                style={props.mystyle}
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
@@ -80,7 +80,7 @@ export default function About() {
               className="accordion-collapse collapse"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body" style={mystyle}>
+              <div className="accordion-body" style={props.mystyle}>
                 <strong>This is the second item's accordion body.</strong> It is
                 hidden by default, until the collapse plugin adds the
                 appropriate classNamees that we use to style each element. These
@@ -100,7 +100,7 @@ export default function About() {
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseThree"
-                style={mystyle}
+                style={props.mystyle}
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
@@ -112,7 +112,7 @@ export default function About() {
               className="accordion-collapse collapse"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body" style={mystyle}>
+              <div className="accordion-body" style={props.mystyle}>
                 <strong>This is the third item's accordion body.</strong> It is
                 hidden by default, until the collapse plugin adds the
                 appropriate classNamees that we use to style each element. These

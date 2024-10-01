@@ -2,7 +2,9 @@ import "./App.css";
 import Alerts from "./components/Alerts";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
+import About from "./components/About";
 import React, { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
   //different color mode
@@ -59,9 +61,9 @@ function App() {
       setMode("dark");
       setMystyle({
         color: "white",
-        backgroundColor: "#252629",
+        backgroundColor: "#373737",
       });
-      document.body.style.backgroundColor = "#252629";
+      document.body.style.backgroundColor = "#373737";
       showAlert("Dark mode hash enable !", "success");
     } else {
       setMode("light");
@@ -74,7 +76,31 @@ function App() {
     }
   };
 
-  
+  //routing router
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          {/* <Navbar /> */}
+          <TextForm
+            heading="Enter Here Your Text....!"
+            mystyle={mystyle}
+            showAlert={showAlert}
+          />
+        </>
+      ),
+    },
+    {
+      path: "/about",
+      element: (
+        <>
+          {/* <Navbar /> */}
+          <About mystyle={mystyle} />
+        </>
+      ),
+    },
+  ]);
 
   //return in index html
   return (
@@ -91,14 +117,17 @@ function App() {
       <Alerts alert={Alert} />
 
       <div className="container my-4">
-        <TextForm
+        <RouterProvider router={router} />
+        {/* <TextForm
           heading="Enter Here Your Text....!"
           mystyle={mystyle}
           showAlert={showAlert}
-        />
+        /> */}
       </div>
     </>
   );
 }
+
+
 
 export default App;
