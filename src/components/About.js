@@ -18,7 +18,7 @@ export default function About(props) {
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                Accordion Item #1
+                Analyze your text
               </button>
             </h2>
             <div
@@ -27,14 +27,7 @@ export default function About(props) {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body" style={props.mystyle}>
-                <strong>This is the first item's accordion body.</strong> It is
-                shown by default, until the collapse plugin adds the appropriate
-                classNamees that we use to style each element. These classNamees
-                control the overall appearance, as well as the showing and
-                hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
+                <strong>Textutils gives you a way to analyze your text.</strong> quickly and efficiently, Be it word count,
                 overflow.
               </div>
             </div>
@@ -50,7 +43,7 @@ export default function About(props) {
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
-                Accordion Item #2
+                Free character counter tool
               </button>
             </h2>
             <div
@@ -59,15 +52,7 @@ export default function About(props) {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body" style={props.mystyle}>
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong>Textutils is a free character counter tool.</strong> that provides instant character count & word count statics for a given text. Textutils reports the number of words and characters. Thus it is suitable for writing text with word/character limit.
               </div>
             </div>
           </div>
@@ -82,7 +67,7 @@ export default function About(props) {
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
-                Accordion Item #3
+                Word counter software
               </button>
             </h2>
             <div
@@ -91,14 +76,7 @@ export default function About(props) {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body" style={props.mystyle}>
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
+                <strong>This word counter software work in any web Browser.</strong> such as chrome, firefox, internet Explorer, safari,opera. it suits to count characters in facebook, blog, books, excel document, pdf document, essays etc.
                 overflow.
               </div>
             </div>

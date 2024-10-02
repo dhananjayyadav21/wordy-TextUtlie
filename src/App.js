@@ -77,76 +77,37 @@ function App() {
   };
 
   //routing router
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: (
-  //       <>
-  //         <TextForm
-  //         heading="Enter Here Your Text....!"
-  //         mystyle={mystyle}
-  //         showAlert={showAlert}/>
-  //       </>
-  //     ),
-  //   },
-  //   {
-  //     path: "/about",
-  //     element: (
-  //       <>
-  //         <About mystyle={mystyle}/>
-  //       </>
-  //     ),
-  //   },
-  // ]);
-
-  //return in index html
   return (
     <>
       <BrowserRouter>
-      <Navbar
-        title="Wordy"
-        about="About Us"
-        mode={mode}
-        toggleMode={toggleMode}
-        BlueMode={BlueMode}
-        yelloMode={yelloMode}
-        greenMode={greenMode}
-      />
-      <Alerts alert={Alert} />
-      <Routes>
-        {/* <Route path='/' element={<ProtectedRoute/>}></Route> */}
-          <Route path='/' element={<TextForm heading="Enter Here Your Text....!"
-          mystyle={mystyle}
-          showAlert={showAlert} />}/>
-          <Route path='/about' element={<About mystyle={mystyle} />}/>
-      </Routes>
-
-    </BrowserRouter>
-
-      {/* <Navbar
-        title="Wordy"
-        about="About Us"
-        mode={mode}
-        toggleMode={toggleMode}
-        BlueMode={BlueMode}
-        yelloMode={yelloMode}
-        greenMode={greenMode}
-      />
-      <Alerts alert={Alert} />
-
-      <div className="container my-4">
-        <RouterProvider router={router} />
-        <About mystyle={mystyle} />
-        <TextForm
-          heading="Enter Here Your Text....!"
-          mystyle={mystyle}
-          showAlert={showAlert}
-        /> 
-      </div> */}
+        <Navbar
+          title="Wordy"
+          about="About Us"
+          mode={mode}
+          toggleMode={toggleMode}
+          BlueMode={BlueMode}
+          yelloMode={yelloMode}
+          greenMode={greenMode}
+        />
+        <Alerts alert={Alert} />
+        <div className="container ">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <TextForm
+                  heading="Enter Here Your Text....!"
+                  mystyle={mystyle}
+                  showAlert={showAlert}
+                />
+              }
+            />
+            <Route path="/about" element={<About mystyle={mystyle} />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </>
   );
 }
-
-
 
 export default App;
