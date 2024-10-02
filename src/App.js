@@ -1,10 +1,15 @@
 import "./App.css";
 import Alerts from "./components/Alerts";
 import Navbar from "./components/Navbar";
+import Layout from "./components/Layout";
 import TextForm from "./components/TextForm";
 import About from "./components/About";
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 function App() {
   //different color mode
@@ -77,76 +82,30 @@ function App() {
   };
 
   //routing router
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: (
-  //       <>
-  //         <TextForm
-  //         heading="Enter Here Your Text....!"
-  //         mystyle={mystyle}
-  //         showAlert={showAlert}/>
-  //       </>
-  //     ),
-  //   },
-  //   {
-  //     path: "/about",
-  //     element: (
-  //       <>
-  //         <About mystyle={mystyle}/>
-  //       </>
-  //     ),
-  //   },
-  // ]);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout Alert={Alert} mystyle={mystyle} mode = {mode} toggleMode={()=> toggleMode()} BlueMode= {()=>BlueMode()} yelloMode={()=>yelloMode()} greenMode={()=>greenMode()}  />, // Use Layout component here
+      children: [
+        {
+          path: "/",
+          element: (
+            <TextForm
+              heading="Enter Your Text Here....!"
+              mystyle={mystyle}
+              showAlert={showAlert}
+            />
+          ),
+        },
+        {
+          path: "/about",
+          element: <About mystyle={mystyle} />,
+        },
+      ],
+    },
+  ]);
 
-  //return in index html
-  return (
-    <>
-      <BrowserRouter>
-      <Navbar
-        title="Wordy"
-        about="About Us"
-        mode={mode}
-        toggleMode={toggleMode}
-        BlueMode={BlueMode}
-        yelloMode={yelloMode}
-        greenMode={greenMode}
-      />
-      <Alerts alert={Alert} />
-      <Routes>
-        {/* <Route path='/' element={<ProtectedRoute/>}></Route> */}
-          <Route path='/' element={<TextForm heading="Enter Here Your Text....!"
-          mystyle={mystyle}
-          showAlert={showAlert} />}/>
-          <Route path='/about' element={<About mystyle={mystyle} />}/>
-      </Routes>
-
-    </BrowserRouter>
-
-      {/* <Navbar
-        title="Wordy"
-        about="About Us"
-        mode={mode}
-        toggleMode={toggleMode}
-        BlueMode={BlueMode}
-        yelloMode={yelloMode}
-        greenMode={greenMode}
-      />
-      <Alerts alert={Alert} />
-
-      <div className="container my-4">
-        <RouterProvider router={router} />
-        <About mystyle={mystyle} />
-        <TextForm
-          heading="Enter Here Your Text....!"
-          mystyle={mystyle}
-          showAlert={showAlert}
-        /> 
-      </div> */}
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
-
-
 
 export default App;
