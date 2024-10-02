@@ -12,10 +12,9 @@ function Alerts(prpos) {
   }
 
   return  (
-    <div className="container my-2" style={{height : '40px'}}>
-    {prpos.alert && <div className={`container alert alert-${prpos.alert?.type} alert-dismissible fade show`}  role="alert">
+    <div className="container my-3" style={{height : '50px'}}>
+    {prpos.alert && <div className={`container alert alert-${prpos.alert?.type} alert-dismissible fade show`} style={{padding: '8px'}}  role="alert">
         <strong>{Capitlize(prpos.alert?.type)}</strong>: {prpos.alert?.message} !!
-        <button type="button" className="btn-close" data-bs-dismiss="alert"  aria-label="Close"></button>
       </div>}
     </div>
   );

@@ -44,19 +44,19 @@ export default function TextForm(props) {
       <div className="container">
       <h3>{props.heading}</h3>
       <div className="mb-3">
-        <textarea className="form-control"value={text} onChange={handleupperchange} id="mybox" rows="8"></textarea>
+        <textarea className="form-control" value={text} onChange={handleupperchange} id="mybox" rows="8"></textarea>
       </div>
       <div>
         <button disabled={text.length===0} className="btn btn-outline-warning mx-1 my-1" onClick={handleUpperclick}> Upper Case</button>
-        <button disabled={text.length===0}  className="btn btn-outline-danger mx-1 my-1" onClick={handleLowerclick}>Lower case</button>
+        <button disabled={text.length===0}  className="btn btn-outline-danger mx-1 my-1" onClick={handleLowerclick}>Lower Case</button>
         <button disabled={text.length===0}  className="btn btn-outline-primary mx-1 my-1" onClick={handlecopy}>Copy Text</button>
-        <button disabled={text.length===0}  className="btn btn-outline-success mx-1 my-1" onClick={handleClear}>Cleare Text</button>
+        <button disabled={text.length===0}  className="btn btn-outline-success mx-1 my-1" onClick={handleClear}>Clear Text</button>
       </div>
       </div>
       <div className="container my-5">
         <h3>Text Summary</h3>
         <p>{text.split(" ").filter((element)=>{return element.length !==0}).length} Words & {text.length} Characters</p>
-        <p>Read In {0.008 * text.split(" ").length} Minutes</p>
+        <p>Read In {0.008 * text.split(" ").filter((element)=>{return element.length !==0}).length} Minutes</p>
         <h3>Text Previwe</h3>
         <p>{text.length>0?text:'Entere in the text area somthing to preview it here'}</p>
       </div>

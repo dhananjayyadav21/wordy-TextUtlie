@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import About from "./components/About";
 import React, { useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   //different color mode
@@ -77,35 +77,53 @@ function App() {
   };
 
   //routing router
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <>
-          {/* <Navbar /> */}
-          <TextForm
-            heading="Enter Here Your Text....!"
-            mystyle={mystyle}
-            showAlert={showAlert}
-          />
-        </>
-      ),
-    },
-    {
-      path: "/about",
-      element: (
-        <>
-          {/* <Navbar /> */}
-          <About mystyle={mystyle} />
-        </>
-      ),
-    },
-  ]);
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: (
+  //       <>
+  //         <TextForm
+  //         heading="Enter Here Your Text....!"
+  //         mystyle={mystyle}
+  //         showAlert={showAlert}/>
+  //       </>
+  //     ),
+  //   },
+  //   {
+  //     path: "/about",
+  //     element: (
+  //       <>
+  //         <About mystyle={mystyle}/>
+  //       </>
+  //     ),
+  //   },
+  // ]);
 
   //return in index html
   return (
     <>
+      <BrowserRouter>
       <Navbar
+        title="Wordy"
+        about="About Us"
+        mode={mode}
+        toggleMode={toggleMode}
+        BlueMode={BlueMode}
+        yelloMode={yelloMode}
+        greenMode={greenMode}
+      />
+      <Alerts alert={Alert} />
+      <Routes>
+        {/* <Route path='/' element={<ProtectedRoute/>}></Route> */}
+          <Route path='/' element={<TextForm heading="Enter Here Your Text....!"
+          mystyle={mystyle}
+          showAlert={showAlert} />}/>
+          <Route path='/about' element={<About mystyle={mystyle} />}/>
+      </Routes>
+
+    </BrowserRouter>
+
+      {/* <Navbar
         title="Wordy"
         about="About Us"
         mode={mode}
@@ -118,12 +136,13 @@ function App() {
 
       <div className="container my-4">
         <RouterProvider router={router} />
-        {/* <TextForm
+        <About mystyle={mystyle} />
+        <TextForm
           heading="Enter Here Your Text....!"
           mystyle={mystyle}
           showAlert={showAlert}
-        /> */}
-      </div>
+        /> 
+      </div> */}
     </>
   );
 }

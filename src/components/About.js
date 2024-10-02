@@ -1,29 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function About(props) {
-  const [mystyle, setMystyle] = useState({
-    color: " black",
-    backgroundColor: "white",
-  });
-
-  const [btntext, setBtntext] = useState("Enable Dark mode");
-
-  const enablemode = () => {
-    if (mystyle.backgroundColor === "white") {
-      setMystyle({
-        color: " white",
-        backgroundColor: "black",
-      });
-      setBtntext("Enable Dark mode");
-    } else {
-      setMystyle({
-        color: " black",
-        backgroundColor: "white",
-      });
-      setBtntext("Enable Dark mode");
-    }
-  };
-
+ 
   return (
     <div>
       <div className="container" style={props.mystyle}>
@@ -125,9 +103,6 @@ export default function About(props) {
               </div>
             </div>
           </div>
-          <button onClick={enablemode} className="btn btn-warning my-3">
-            {btntext}
-          </button>
         </div>
       </div>
     </div>
