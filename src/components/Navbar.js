@@ -42,7 +42,7 @@ export default function Navbar(props) {
             <button type="button" className="btn btn-success mx-1 my-1" onClick={props.greenMode}>green</button>
             
 
-            <div className="form-check form-switch mx-1  mx-md-4 my-3">
+            <div className="form-check form-switch mx-1  mx-md-4 ">
               <input
                 className="form-check-input"
                 type="checkbox"
